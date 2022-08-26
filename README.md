@@ -6,6 +6,9 @@ Contact:
 * gmail: reverse4free@gmail.com
 * QQ: 2806165332
 
+| You can get more information from the [UpdateLog](UPDATE_LOG.md).
+
+
 ## English Version
 
 We stably support both **android/ios** platform and *mostly version* of the TikTok api including the latest **X-Argus**, **X-Ladon**, **X-Gorgon**, **X-Khronos**, **X-Tyhon** as well as some other core algorithms. 
@@ -41,7 +44,7 @@ Thinking of this for a while, our slogan is: Reverse For (Financial) Free!
 需要注意：
 * 因为人身安全的原因，我们暂时不承接针对中国本土区域 APP 的逆向能力，所以虽然攻破抖音对我们来说易如反掌，但我们不会提供针对抖音的破解服务，包括快手、美团等；
 * 我们缺钱，但更惜命，所以不闲聊，同时如果我们怀疑你是相关公司的安全人员，那么会立即停止合作，且对于免费用户我们不会给出任何提示和反馈；
-* 我们缺点，但有底线，我们并不关注你做了什么，但如果发现你拿去做了一些诸如儿童色情之类的底线问题，我们会立即停止服务，无论你是否为付费用户；
+* 我们缺钱，但有底线，我们并不关注你做了什么，但如果发现你拿去做了一些诸如儿童色情之类的底线问题，我们会立即停止服务，无论你是否为付费用户；
 * 国外用户推荐使用 gmail 沟通，国内用户推荐 qq 沟通；
 * 我们会提供完整 demo(双平台的设备注册与激活) 和 api 介绍文档演示如何使用此服务，所以请一定认真阅读相关文档，如果真的遇到未知问题，付费用户请直接联系我们，免费用户请提交 issue;
 
