@@ -1,5 +1,6 @@
 import json
 import time
+import os
 from sign import do_sign
 from tt_encrypt import do_tt_encrypt
 from utils import rand_str, hash_md5_hex, post_request, get_request
@@ -275,7 +276,88 @@ class DeviceRegister:
         obj = json.loads(response)
         print(obj)
 
+    def get_token(self):
+        """
+        get token
+        """
+        timestamp_ms = round(time.time() * 1000)
+        timestamp = timestamp_ms // 1000
+
+        host = "https://mssdk-va.tiktokv.com"
+        url = "/sdi/get_token"
+
+        url_params = {
+            "lc_id" : "1225625952",
+            "platform" : DeviceInfo.osName,
+            "device_platform" : DeviceInfo.osName.lower(),
+            "sdk_ver" : AppInfo.sdkVersion,
+            "sdk_ver_code" : AppInfo.sdkVersionCode,
+            "app_ver" : AppInfo.appVersion,
+            "version_code" : AppInfo.buildNumber,
+            "aid" : AppInfo.id,
+            "iid" : self.install_id,
+            "did" : self.device_id,
+            "region_type" : "ov",
+            "mode" : "2"
+        }
+
+        query_args = self._get_url_params(url_params)
+        query_str = f"{host}{url}?{query_args}"
+
+        with open("get_token_req_body.bin", "rb") as fp:
+            """
+            NOTE!!! For protecting ourself, we dont provide this bin file, you can get it by yourself, 
+            from the request body of your real iphone/android devices.
+            """
+            body = fp.read()
+
+        x_ladon, x_argus, x_gorgon, x_khronos, x_tyhon = do_sign("ios",
+                                                                    app_ver=AppInfo.appVersion,
+                                                                    sdk_ver=AppInfo.sdkVersion,
+                                                                    device_id=self.device_id,
+                                                                    timestamp=timestamp,
+                                                                    device_model=DeviceInfo.model,
+                                                                    os_version=DeviceInfo.osVersion,
+                                                                    req_type="POST",
+                                                                    req_url=query_str,
+                                                                    open_udid=DeviceInfo.openudid,
+                                                                    ios_idfa=DeviceInfo.idfa
+                                                                    )
+
+        body_md5 = hash_md5_hex(body).upper()
+
+        header = {
+            "x-tt-token": "",
+            "x-tt-dm-status": "login=1;ct=1;rt=1",
+            "x-vc-bdturing-sdk-version": "2.2.0",
+            "content-type": "application/octet-stream",
+            "user-agent": "ByteDance-MSSDK",
+            "x-tt-cmpl-token": "AgQQAPNSF-RPsLJx5wJVIR0i-Ew0aqqyP6zZYMfGEA",
+            "sdk-version": "2",
+            "passport-sdk-version": "19",
+            "x-ss-stub": body_md5,
+            "x-tt-store-idc": "useast5",
+            "x-tt-store-region": DeviceInfo.region,
+            "x-tt-store-region-src": "uid",
+            "x-bd-kmsv": "0",
+            "x-ss-dp": AppInfo.id,
+            "x-tt-trace-id": self._get_trace_id(),
+            "accept-encoding": "gzip, deflate",
+            "x-argus": x_argus,
+            "x-ladon": x_ladon,
+            "x_gorgon": x_gorgon,
+            "x-khronos": x_khronos,
+            "x-tyhon": x_tyhon,
+        }
+        post_request(host, url, query_args, header, post_body=body)
+        # The result is a pb msg, you can decrypt it by yourself.
+
 if __name__ == '__main__':
     device = DeviceRegister()
     device.post_device_register()
     device.get_app_alert_check()
+    # Presently, we do not provide the enc/dec method for token, 
+    # because in my opinion, it's not hard for you with our signature api.
+    # However, if this is necessary for my big customers, I will support it quickly.
+    if os.access("get_token_req_body.bin", os.R_OK):
+        device.get_token()

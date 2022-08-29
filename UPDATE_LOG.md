@@ -1,5 +1,19 @@
 # Change Log
 
+## [v1.1.0] - 2022-08-29
+
+### Added
+
+- Added the demo of `sdi/get_token` on **iOS** platform. Presently, we do not provide the enc/dec method of this token, because in my opinion, it's not hard for you with our signature api. However, if this is necessary for my big customers, I will support it quickly.
+
+### Improved
+
+- None
+
+### BugFix
+
+- None
+
 ## [v1.0.0] - 2022-08-26
 
 ### Added
