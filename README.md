@@ -4,12 +4,11 @@ The **strongest** TikTok signature/encryption protocol service on the market. �
 
 Contact: 
 * gmail: reverse4free@gmail.com
-* QQ: 2806165332
 * Telegram: https://t.me/reverse4free2
 
-> You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md).
+> You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md). You can also get the detail introduction of our API service from [API Description](doc/API.md).
 
-> 你可以从 [UPDATE LOG](UPDATE_LOG.md) 中获取我们的服务更新日志，特别是了解我们新增/改进了哪些能力。同时，可以从 [DEMO HANDBOOK](doc/demo_handbook.md) 中了解如何使用我们提供的 demo 来进行功能测试。
+> 你可以从 [UPDATE LOG](UPDATE_LOG.md) 中获取我们的服务更新日志，特别是了解我们新增/改进了哪些能力。同时，可以从 [DEMO HANDBOOK](doc/demo_handbook.md) 中了解如何使用我们提供的 demo 来进行功能测试。关于我们提供的 API 服务的详细介绍，可以在 [API 说明文档](doc/API.md) 中查看。
 
 
 
@@ -17,7 +16,7 @@ Contact:
 
 We stably support both **android/ios** platform and *mostly version* of the TikTok api including the latest **X-Argus**, **X-Ladon**, **X-Gorgon**, **X-Khronos**, **X-Tyhon** as well as some other core algorithms. 
 
-**Profitability is important for us, but finding long-term partners is even more important**. So for demonstrating our technical capability, all of our Apis is free now! You can contact us by gmail(Non-China Users) or qq(China users) to apply for **free token** of our server. Each free token is available for 5 days, and support 1 api call every 5 seconds. For paying users, we can **provide customized services**, no mater what QPS you need we can provide.
+**Profitability is important for us, but finding long-term partners is even more important**. So for demonstrating our technical capability, all of our Apis is free now! You can contact us by gmail(Non-China Users) or qq(China users) to apply for **free token** of our server. Each free token is available for 2 days, and support 1 QPS. For paying users, we can **provide customized services**, no mater what QPS you need we can provide.
 
 We promise:
 * We will permanently support both Android/iOS platform. If you are also interested in the web platform, you can tell us, and we can support it soon. Please believe in our technical strength.
@@ -38,7 +37,7 @@ Thinking of this for a while, our slogan is: Reverse For (Financial) Free!
 
 我们提供 TikTok（抖音海外版）**双平台**（Android/iOS）**最新**的核心风控算法——*5神算法*，以及其它一些关键的**加密加签算法**，稳定支持绝大部分版本。
 
-**盈利对我们来说很重要，但寻求到长期合作伙伴更重要**。所以为了体现我们的技术实力，当前整个服务免费对外提供。大家可以通过 gmail 或者 qq 联系我们申请免费的 token，此 token 允许大家每隔 5 秒调用一次我们的服务，有效期为 5 天。后续可以为付费用户提供定制化服务，QPS 这块绝对不用担心。
+**盈利对我们来说很重要，但寻求到长期合作伙伴更重要**。所以为了体现我们的技术实力，当前整个服务免费对外提供。大家可以通过 gmail 或者 qq 联系我们申请免费的 token，此 token 允许大家每隔 1 秒调用一次我们的服务，有效期为 2 天。后续可以为付费用户提供定制化服务，QPS 这块绝对不用担心。
 
 我们承诺：
 * 我们会永久支持 Android/iOS 双平台，如果大家对 web 平台也感兴趣的话，可以告知我们，我们很快也可以支持起来，请相信我们的技术实力；
