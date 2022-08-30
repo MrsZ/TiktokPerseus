@@ -6,7 +6,10 @@ Contact:
 * gmail: reverse4free@gmail.com
 * QQ: 2806165332
 
-| You can get more information from the [UpdateLog](UPDATE_LOG.md).
+> You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md).
+
+> 你可以从 [UPDATE LOG](UPDATE_LOG.md) 中获取我们的服务更新日志，特别是了解我们新增/改进了哪些能力。同时，可以从 [DEMO HANDBOOK](doc/demo_handbook.md) 中了解如何使用我们提供的 demo 来进行功能测试。
+
 
 
 ## English Version
