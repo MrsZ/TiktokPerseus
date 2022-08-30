@@ -5,6 +5,7 @@ The **strongest** TikTok signature/encryption protocol service on the market. å¸
 Contact: 
 * gmail: reverse4free@gmail.com
 * QQ: 2806165332
+* Telegram: https://t.me/reverse4free2
 
 > You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md).
 
