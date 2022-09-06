@@ -1,10 +1,23 @@
 # TikTokApi
 
-The **strongest** TikTok signature/encryption protocol service on the market. 市面上**最强** TikTok 签名/加密协议服务。
+The **strongest** and **cheapest** TikTok signature/encryption protocol service on the market, stably support for a single customer with an average of millions of calls per day. 市面上**最强**, 价格最实惠的 TikTok 签名/加密协议服务。稳定支持单客户日均百万级调用。
 
 Contact: 
 * gmail: reverse4free@gmail.com
 * Telegram: https://t.me/reverse4free2
+
+## BREAKING NEWS
+
+### 2022-09-06
+
+* **Significantly reduce the cost of interface calls, up to 60% off!** Otherwise, we have found that some bad guys abuse our free test key, so we decide to remove all free test keys. You can apply for 4 days available test key with 10 USDT. By the way, if you don't want to pay a 10 USDT for testing, you must not our potential clients D:)
+* Supported `sdi/get_token` both in android/ios platform. Ref [API](doc/API.md) `encrypt_get_token` and `decrypt_get_token` interface.
+* Added new api `get_device_template` to get android/ios device template. Now you can generate device fingerprint easily with our device template. Ref [API](doc/API.md) to get more information too.
+
+* **大幅度减少接口调用费用，最高达原有费用的 4 折**。另外，我们取消了免费测试 key，因为我们有发现一些测试用户滥用我们的接口，浪费了我们大量运营人力。现在你需要花费 10 USDT 来申请 4 天有效期的测试 key，毕竟，如果你连 10 USDT 都不愿意支付的话，我们不觉得你会是一个潜在的客户，望理解。
+* 新增支持 android/ios 平台的 `sdi/get_token` 接口。更详细的介绍请参考 [API](doc/API.md) `encrypt_get_token` 和 `decrypt_get_token` 接口。
+* 新增接口 `get_device_template` 以获取 android/ios 的设备指纹模版。基于该模版，你可以很轻松地创建任意的设备指纹。
+
 
 > You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md). You can also get the detail introduction of our API service from [API Description](doc/API.md).
 

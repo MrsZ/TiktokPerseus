@@ -1,7 +1,9 @@
 import hashlib
 import random
+from urllib import parse
 
 import requests
+
 
 def hash_md5_hex(data):
     md5 = hashlib.md5()
@@ -17,7 +19,7 @@ def rand_str(length):
     return rand
 
 
-def post_request(host, url, get_args, header, post_body, cookies=None):
+def post_request(host, url, get_args, header, post_body, cookies=None, is_text=True):
     url = host + url + '?' + get_args
     resp = requests.post(url,
                          headers=header,
@@ -26,8 +28,12 @@ def post_request(host, url, get_args, header, post_body, cookies=None):
                          cookies=cookies
                          )
     print(resp.headers)
-    print("resp:", resp.text)
-    return resp.text
+
+    if is_text is True:
+        print("resp:", resp.text)
+        return resp.text
+    else:
+        return resp.content
 
 
 def get_request(host, url, get_args, header, cookies=None):
@@ -40,3 +46,16 @@ def get_request(host, url, get_args, header, cookies=None):
     print(resp.headers)
     print("resp:", resp.text)
     return resp.text
+
+
+def to_query_str(query_dict: dict):
+    get_args = ''
+    for k, v in query_dict.items():
+        get_args += f"&{k}={v}"
+    get_args = get_args[1:]
+    return get_args
+
+
+if __name__ == '__main__':
+    pass
+

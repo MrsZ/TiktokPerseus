@@ -1,5 +1,20 @@
 # Change Log
 
+## [v2.0.0] - 2022-09-06
+
+### Added
+
+- Supported `sdi/get_token` on both android and ios platform. Ref [API](doc/API.md) `encrypt_get_token` and `decrypt_get_token` interface to get more detail information.
+- Added new api `get_device_template` to get android/ios device template. Now you can generate device fingerprint easily with our device template. Ref [API](doc/API.md) to get more information too.
+
+### Improved
+
+- Use new api `get_device_register_body` to replace the old deprecated api `tt_encrypt`. The new api significantly reduces the complex of calling.
+
+### BugFix
+
+- Supported automatically get **aid** from the request body of `get_sign` api, if the aid parameter is not explicitly passed from the url.
+
 ## [v1.1.0] - 2022-08-29
 
 ### Added
