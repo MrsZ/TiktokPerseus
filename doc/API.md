@@ -3,7 +3,7 @@
 ## URL
 
 ```
-https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/get_device_template
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_device_template
 ```
 
 ## Method
@@ -172,7 +172,7 @@ iOS:
 ## URL
 
 ```
-https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/get_sign
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_sign
 ```
 
 ## Method
@@ -240,7 +240,7 @@ https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/get_sign
 ## URL
 
 ```
-https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/get_device_register_body
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_device_register_body
 ```
 
 ## Method
@@ -343,7 +343,7 @@ https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/tt_encrypt
 ## URL
 
 ```
-https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/encrypt_get_token
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/encrypt_get_token
 ```
 
 ## Method
@@ -391,7 +391,7 @@ https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/encrypt_get_token
 ## URL
 
 ```
-https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/decrypt_get_token
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/decrypt_get_token
 ```
 
 ## Method
