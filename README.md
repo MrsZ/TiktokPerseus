@@ -8,6 +8,14 @@ Contact:
 
 ## BREAKING NEWS
 
+### 2022-09-08
+
+* **The latest Tiktok-lite 26.4.4 is supported!**, try our server and have fun! Now we supported 1180, 1233, 1340.
+* The web signature is coming soon, so stay tuned!
+
+* **已经支持最新版 Tiktok-lite 26.4.4 的签名算法**, 快来试试吧！现在我们支持 1180, 1233, 1240 三款最主流的 Tiktok app 了。
+* 最新版本的 web 签名我们也快搞定了，敬请期待！
+
 ### 2022-09-06
 
 * **Significantly reduce the cost of interface calls, up to 60% off!** Otherwise, we have found that some bad guys abuse our free test key, so we decide to remove all free test keys. You can apply for 4 days available test key with 10 USDT. By the way, if you don't want to pay a 10 USDT for testing, you must not our potential clients D:)
@@ -29,7 +37,7 @@ Contact:
 
 We stably support both **android/ios** platform and *mostly version* of the TikTok api including the latest **X-Argus**, **X-Ladon**, **X-Gorgon**, **X-Khronos**, **X-Tyhon** as well as some other core algorithms. 
 
-**Profitability is important for us, but finding long-term partners is even more important**. So for demonstrating our technical capability, all of our Apis is free now! You can contact us by gmail(Non-China Users) or qq(China users) to apply for **free token** of our server. Each free token is available for 2 days, and support 1 QPS. For paying users, we can **provide customized services**, no mater what QPS you need we can provide.
+**Profitability is important for us, but finding long-term partners is even more important**. So for demonstrating our technical capability, all of our Apis is free now! You can contact us by gmail or telegram to apply for test key(10 USDT) of our server. Each test key is available for 4 days, and support 1 QPS. For paying users, we can **provide customized services**, no mater what QPS you need we can provide.
 
 We promise:
 * We will permanently support both Android/iOS platform. If you are also interested in the web platform, you can tell us, and we can support it soon. Please believe in our technical strength.
@@ -40,8 +48,8 @@ Please note:
 * Due to personal safety reasons, we temporarily do not undertake the reverse capability of APPs in China's local area, so although it is easy for us to crack Douyin, we will not provide cracking services for it, including other apps such as Kuaishou, Meituan, etc;
 * We are short of money, but we prefer our lives, so we don’t chat. At the same time, if we suspect that you are a security classmate of the relevant company, we will stop cooperation immediately, and we will not give any tips and feedback for free users;
 * We are short of money, but we have a bottom line, we don't pay attention to what you do, but if we find that you have done some bottom line problems such as child pornography, we will stop the service immediately, whether you are a paying user or not;
-* Non-China users recommend using gmail to communicate, China users recommend QQ communication;
-* We will provide a complete demo (dual-platform device registration and activation) and api introduction documents to demonstrate how to use this service, so please read the relevant documents carefully. If you really encounter unknown problems, please contact us directly for paid users, and submit issue for free users;
+* Recommend using telegram to communicate with us;
+* We will provide a complete demo (dual-platform device registration and activation) and api introduction documents to demonstrate how to use this service, so please read the relevant documents carefully. If you really encounter unknown problems, please contact us directly;
 
 Thinking of this for a while, our slogan is: Reverse For (Financial) Free!
 
@@ -50,7 +58,7 @@ Thinking of this for a while, our slogan is: Reverse For (Financial) Free!
 
 我们提供 TikTok（抖音海外版）**双平台**（Android/iOS）**最新**的核心风控算法——*5神算法*，以及其它一些关键的**加密加签算法**，稳定支持绝大部分版本。
 
-**盈利对我们来说很重要，但寻求到长期合作伙伴更重要**。所以为了体现我们的技术实力，当前整个服务免费对外提供。大家可以通过 gmail 或者 qq 联系我们申请免费的 token，此 token 允许大家每隔 1 秒调用一次我们的服务，有效期为 2 天。后续可以为付费用户提供定制化服务，QPS 这块绝对不用担心。
+**盈利对我们来说很重要，但寻求到长期合作伙伴更重要**。所以为了体现我们的技术实力，当前整个服务免费对外提供。大家可以通过 gmail 或者 tg 联系我们申请测试 key(10 USDT)，此 key 允许大家每隔 1 秒调用一次我们的服务，有效期为 4 天。后续可以为付费用户提供定制化服务，QPS 这块绝对不用担心。
 
 我们承诺：
 * 我们会永久支持 Android/iOS 双平台，如果大家对 web 平台也感兴趣的话，可以告知我们，我们很快也可以支持起来，请相信我们的技术实力；
@@ -61,7 +69,7 @@ Thinking of this for a while, our slogan is: Reverse For (Financial) Free!
 * 因为人身安全的原因，我们暂时不承接针对中国本土区域 APP 的逆向能力，所以虽然攻破抖音对我们来说易如反掌，但我们不会提供针对抖音的破解服务，包括快手、美团等；
 * 我们缺钱，但更惜命，所以不闲聊，同时如果我们怀疑你是相关公司的安全人员，那么会立即停止合作，且对于免费用户我们不会给出任何提示和反馈；
 * 我们缺钱，但有底线，我们并不关注你做了什么，但如果发现你拿去做了一些诸如儿童色情之类的底线问题，我们会立即停止服务，无论你是否为付费用户；
-* 国外用户推荐使用 gmail 沟通，国内用户推荐 qq 沟通；
-* 我们会提供完整 demo(双平台的设备注册与激活) 和 api 介绍文档演示如何使用此服务，所以请一定认真阅读相关文档，如果真的遇到未知问题，付费用户请直接联系我们，免费用户请提交 issue;
+* 推荐使用 telegram 同我们沟通，效率更高；
+* 我们会提供完整 demo(双平台的设备注册与激活) 和 api 介绍文档演示如何使用此服务，所以请一定认真阅读相关文档，如果真的遇到未知问题，请直接联系我们;
 
 暂时就想到了这些，我们的口号是： Reverse For (financial) Free!

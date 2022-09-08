@@ -1,5 +1,19 @@
 # Change Log
 
+## [v2.1.0] - 2022-09-08
+
+### Added
+
+- Supported lastest tiktok-list 26.4.4, aid is 1340.
+
+### Improved 
+
+- None
+
+### BugFix
+
+- None
+
 ## [v2.0.0] - 2022-09-06
 
 ### Added
