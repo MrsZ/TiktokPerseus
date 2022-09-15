@@ -6,7 +6,29 @@ Contact:
 * gmail: reverse4free@gmail.com
 * Telegram: https://t.me/reverse4free2
 
-## BREAKING NEWS
+
+## ⚠️WARNING WARNING WARNING / ⚠️警告警告警告
+
+For understanding our service clearly, you must read 3 documents carefully with just 3 minutes.
+- [API Description](doc/API.md) to see what interfaces we have supported and how to invoke these APIs.
+- [DEMO HANDBOOK](doc/demo_handbook.md) to see how to run the demo with our service.
+- [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added recently.
+
+为了快速清晰地了解我们目前提供的服务能力，请您务必花费 3 分钟仔细阅读下面 3 个文档：
+- [API Description](doc/API.md)：快速了解我们当前支持了 TikTok 哪些接口，以及如何使用这些接口；
+- [DEMO HANDBOOK](doc/demo_handbook.md)：快速了解我们提供了哪些 demo，以及如何运行测试这些 demo;
+- [UPDATE LOG](UPDATE_LOG.md): 快速了解我们服务的更新日志，了解我们最近新增了什么能力；
+
+
+## BREAKING NEWS / 劲爆更新
+
+### 2022-09-15
+
+* Supported the latest TikTok Web Signature **X-bogus** as well as **_signature**! Look at the [demo](https://github.com/reverse4free/TiktokPerseusWeb) project to find out how to use it!
+* The X-Cylons is coming soon~
+
+* 已经支持最新版本的 TikTok Web 签名 **X-bogus** 和 **_signature**，快来试试吧！具体使用 demo 请参考 [demo](https://github.com/reverse4free/TiktokPerseusWeb)。
+* X-Cylons 字段的加解密算法也正在攻破中，敬请期待。
 
 ### 2022-09-08
 
@@ -25,12 +47,6 @@ Contact:
 * **大幅度减少接口调用费用，最高达原有费用的 4 折**。另外，我们取消了免费测试 key，因为我们有发现一些测试用户滥用我们的接口，浪费了我们大量运营人力。现在你需要花费 10 USDT 来申请 4 天有效期的测试 key，毕竟，如果你连 10 USDT 都不愿意支付的话，我们不觉得你会是一个潜在的客户，望理解。
 * 新增支持 android/ios 平台的 `sdi/get_token` 接口。更详细的介绍请参考 [API](doc/API.md) `encrypt_get_token` 和 `decrypt_get_token` 接口。
 * 新增接口 `get_device_template` 以获取 android/ios 的设备指纹模版。基于该模版，你可以很轻松地创建任意的设备指纹。
-
-
-> You can get more information from the [UPDATE LOG](UPDATE_LOG.md) to see what new capabilities we have added. And get the handbook of how to use the demo with test key from [DEMO HANDBOOK](doc/demo_handbook.md). You can also get the detail introduction of our API service from [API Description](doc/API.md).
-
-> 你可以从 [UPDATE LOG](UPDATE_LOG.md) 中获取我们的服务更新日志，特别是了解我们新增/改进了哪些能力。同时，可以从 [DEMO HANDBOOK](doc/demo_handbook.md) 中了解如何使用我们提供的 demo 来进行功能测试。关于我们提供的 API 服务的详细介绍，可以在 [API 说明文档](doc/API.md) 中查看。
-
 
 
 ## English Version

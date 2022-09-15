@@ -1,10 +1,24 @@
 # Change Log
 
+## [v2.2.0] - 2022-09-15
+
+### Added
+
+- Supported lastest tiktok web signature x-bogus as well as _signature;
+
+### Improved 
+
+- None
+
+### BugFix
+
+- Fixed the bug of url encoding.
+
 ## [v2.1.0] - 2022-09-08
 
 ### Added
 
-- Supported lastest tiktok-list 26.4.4, aid is 1340.
+- Supported lastest tiktok-lite 26.4.4, aid is 1340.
 
 ### Improved 
 

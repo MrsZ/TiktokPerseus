@@ -1,3 +1,16 @@
+# 已支持的 API 列表 / Supported API List
+
+| API                      | Platform                                             | Desc                                                                                      |
+|--------------------------|:---------------------------------------------------|:------------------------------------------------------------------------------------------|
+| get_device_template      | <input type="checkbox" disabled checked /> iOS<br><input type="checkbox" disabled checked /> Android| 获取设备信息模版 / Get Device Info Template                                               |
+| get_sign                 | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取 Tiktok 签名 / Get Tiktok Signature (X-Argus/X-Ladon/X-Gorgon/X-khronos/X-Tyhon)      |
+| get_device_register_body | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取设备注册 Body(内含 tt_encrypt) / Get Device Register Body(Including tt_encrypt inner) |
+| encrypt_get_token        | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取 sdi/get_token 接口请求加密后的 body / Get Encrpyted Body Used by sdi/get_token       |
+| decrypt_get_token        | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 解密 sdi/get_token 接口返回的内容 / Decrypt The Response of sdi/get_token                 |
+| get_web_sign             | <input type="checkbox" disabled checked /> Web       | Web 端签名(_siangture & x-bogus) / Web Signature (_signature & x-bogus)                   |
+| X-Cylons                 | <input type="checkbox" disabled />iOS<br> <input type="checkbox" disabled />Android  | Coming soon.                                                                              |                                                                           |
+
+
 # 获取设备信息模版 / Get Device Info Template
 
 ## URL
@@ -434,6 +447,69 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/decrypt_get_token
   "data": {
     "resultCode": 202,
     "token": "Aasc_A-qvr0ca....XEV-JH"
+  },
+  "msg": "success"
+}
+```
+
+# Web 签名 / Web Signature (_signature & x-bogus)
+
+## URL
+
+```
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_web_sign
+```
+
+## Method
+
+<b>POST</b>
+
+## Request
+
+| Field    | Type       | Desc                                    |
+|----------|------------|-----------------------------------------|
+| key      | string     | 咨询技术人员获取密卡 / Contact us for secret key  |
+| req_url  | string     | 需要签名的 url / URL requiring signature     |
+
+```json
+{
+  "key": "...",
+  "req_url": "https://webcast.tiktok.com/webcast/im/fetch/?aid=1988&app_language=en-US&app_name=tiktok_web&browser_language=en&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/102.0.5005.63+Safari/537.36&cookie_enabled=true&cursor=&internal_ext=&device_platform=web&focus_state=true&from_page=user&history_len=4&is_fullscreen=false&is_page_visible=true&did_rule=3&fetch_rule=1&identity=audience&last_rtt=0&live_id=12&resp_content_type=protobuf&screen_height=1152&screen_width=2048&tz_name=Europe/Berlin&referer=https://www.tiktok.com/&root_referer=https://www.tiktok.com/&version_code=180800&webcast_sdk_version=1.3.0&update_version_code=1.3.0&room_id=7142747327864965934"
+}
+```
+
+## Response
+
+| Field | Type    | Desc          |
+|-------|---------|---------------|
+| code  | int     | Result code   |
+| data  | object  | signed result |
+| msg   | string  | Error message |
+
+signed result detail:
+
+| Field             | Type   | Desc             |
+|-------------------| ----   |------------------|
+| _signature        | string | Old signature    |
+| x-bogus           | string | X-Bogus          |
+| browser_language  | string | Browser language |
+| browser_name      | string | Browser name     |
+| browser_platform  | string | Browser platform |
+| signed_url        | string | Full signed url  |
+| user_agent        | string | User Agent       |
+
+```json
+{
+  "code": 200,
+  "data": {
+    "_signature": "_02B4Z6wo00001YyF3xxxxIDBjIXcg1Tsg42MhdjAAAAAc6",
+    "browser_language": "en",
+    "browser_name": "Mozilla",
+    "browser_platform": "Win32",
+    "browser_version": "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
+    "signed_url": "https://webcast.tiktok.com/webcast/im/fetch/?aid=1988&app_language=en-US&app_name=tiktok_web&browser_language=en&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/102.0.5005.63+Safari/537.36&cookie_enabled=true&cursor=&internal_ext=&device_platform=web&focus_state=true&from_page=user&history_len=4&is_fullscreen=false&is_page_visible=true&did_rule=3&fetch_rule=1&identity=audience&last_rtt=0&live_id=12&resp_content_type=protobuf&screen_height=1152&screen_width=2048&tz_name=Europe/Berlin&referer=https://www.tiktok.com/&root_referer=https://www.tiktok.com/&version_code=180800&webcast_sdk_version=1.3.0&update_version_code=1.3.0&room_id=7142747327864965934&X-Bogus=DFSzswVO4uxANxxxxsIr3em4pIDt&_signature=_02B4Z6wo00001YyF3IxxxxIDBjIXcg1Tsg42MhdjAAAAAc6",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
+    "x-bogus": "DFSzswVOxxxxaSsIr3em4pIDt"
   },
   "msg": "success"
 }
