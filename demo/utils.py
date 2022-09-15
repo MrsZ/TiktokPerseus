@@ -1,7 +1,6 @@
 import hashlib
 import random
-from urllib import parse
-
+import urllib
 import requests
 
 
@@ -49,11 +48,7 @@ def get_request(host, url, get_args, header, cookies=None):
 
 
 def to_query_str(query_dict: dict):
-    get_args = ''
-    for k, v in query_dict.items():
-        get_args += f"&{k}={v}"
-    get_args = get_args[1:]
-    return get_args
+    return urllib.parse.urlencode(query_dict)
 
 
 if __name__ == '__main__':
