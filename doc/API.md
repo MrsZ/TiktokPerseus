@@ -66,15 +66,18 @@ Android:
     "data": {
         "IMEI": "b6eR12aEefay",
         "MSSDKVersion": "v04.04.00-ov-android",
+        "MSSDKVersionCode": "67371040",
         "androidId": "GMvBNG3bm9Zx6azm3jZI0Q",
         "apiLevel": 28,
         "appId": "1233",
         "appVersion": "25.6.25",
+        "appVersionCode": "2022506250",
         "bootTimeUTC": "1660725090",
         "brightness": 117,
         "cdid": "27525802-873c-428a-86f3-476cec4ccc44",
         "clientUdid": "1bfcc86d-64ab-412c-a6d8-258499d67bb8",
         "cpuAbi": "armeabi-v7a",
+        "cronetVersion": "4cac2dc1_2022-07-06",
         "curBattery": 14,
         "dataModify": "1648621054",
         "densityDpi": 560,
@@ -90,7 +93,8 @@ Android:
         "internalFreeSize": "52408725137",
         "internalStorageSize": "55886317271",
         "ipv6": "fe80::6047:5ebe:3613:4b48",
-        "language": "zh_CN",
+        "language": "en_US",
+        "licenseId": "2142840551",
         "mac": "66:14:09:3e:bc:8b",
         "manifestVersionCode": 2022506250,
         "openUdid": "78e8bb3548cccc89",
@@ -101,7 +105,8 @@ Android:
         "platform": "android",
         "publicIP": "110.86.124.1",
         "ramTotalSize": "3475283943",
-        "region": "US",
+        "region": "SG",
+        "regionType": "ov",
         "releaseBuild": "9e1a1f5_20220802_df991ea6-1266-11ed-93f1-024200ac1131",
         "rom": "eng.test.20220111.172604",
         "romCompileUTC": "1633940780",
@@ -117,6 +122,7 @@ Android:
         "timezone": "8",
         "timezoneName": "Asia/Singapore",
         "timezoneOffset": 28800,
+        "ttnetVersion": "4.1.89.18-tiktok",
         "updateVersionCode": 2022506250,
         "wifiGateWayIP": "110.86.124.1",
         "wifiIP": "2038191626"
@@ -131,17 +137,21 @@ iOS:
     "code": 200,
     "data": {
         "IDFV": "4504F914-4A2E-4478-A790-2AA8A1E46859",
-        "MSSDKVersion": "v04.04.00-ov-ios",
-        "appId": "1233",
+        "MSSDKVersion": "v04.04.00-ov-iOS",
+        "MSSDKVersionCode": "67371041",
+        "appId": "1180",
         "appName": "trill",
-        "appVersion": "25.6.25",
+        "appVersion": "25.9.0",
+        "appVersionCode": "259000",
         "bootId": "2B772275-02ED-4471-AE36-544AE162281C",
         "bootTimeUTC": "1661486486",
         "brightness": 43,
         "buildNumber": "259000",
         "carrier": "",
+        "carrierRegion": "PL",
         "cdid": "27525802-873c-428a-86f3-476cec4ccc44",
         "channel": "App Store",
+        "cronetVersion": "dcb1a66f_2022-07-04",
         "curBattery": 15,
         "densityDpi": 3,
         "deviceBrand": "iPhone10,2",
@@ -153,7 +163,8 @@ iOS:
         "internalFreeSize": "45328261120",
         "internalStorageSize": "63968497664",
         "ipv6": "fe80::6047:5ebe:3613:4b48",
-        "language": "zh_CN",
+        "language": "en_US",
+        "licenseId": "1225625952",
         "mac": "66:14:09:3e:bc:8b",
         "openUdid": "d3986af2bdd746809d560532e1c531b6be927151",
         "os": "iOS",
@@ -161,13 +172,15 @@ iOS:
         "package": "com.ss.iphone.ugc.Ame",
         "platform": "ios",
         "ramTotalSize": "6",
-        "region": "US",
+        "region": "SG",
+        "regionType": "ov",
         "screenHeight": 2880,
         "screenWidth": 1440,
         "sigHash": "194326e82c85c023116f4a639a52effa",
         "timezone": "8",
         "timezoneName": "Asia/Singapore",
         "timezoneOffset": 28800,
+        "ttnetVersion": "4.1.94.12",
         "userAgent": "TikTok 25.9.0 rv:259000 (iPhone; iOS 14.2; zh_CN) Cronet",
         "vendorId": "4594F944-2A2E-4471-A791-3AA8A2E46859",
         "webUA": "Mozilla\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Mobile\/15E148",
@@ -207,7 +220,7 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_sign
 
 ```json
 {
-  "key": "eHSeiNs+3oA28FOQpLxYG5MgrL+crcRPN9V705Y15YzmDLY0DMwe3w==",
+  "key": "...",
   "req_type": "POST",
   "req_url": "http://xxxxxx/signature/xxxx?version_code=435&device_platform=android&aid=13",
   "timestamp": 1659080857,
@@ -271,7 +284,7 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_device_register_body
 
 ```json
 {
-    "key": "Ak...Vy3AaTs7xGI+OQ0i/MBwyx7abUlSCPgdbEsVd7t31CTXu0JNc=",
+    "key": "...",
     "dev_info": {
         ...
     }
@@ -323,7 +336,7 @@ https://sign-tt-xiheqqvsqx.us-west-1.fcapp.run/tt_encrypt
 
 ```json
 {
-  "key": "eHSeiNs+3oA28FOQpLxYG5MgrL+crcRPN9V705Y15YzmDLY0DMwe3w==",
+  "key": "...",
   "data": "eyJtYWdpY190YWciOiAic3NfYXBwX2xvZyIsICJoZWFkZXIiOiB7ImRpc3BsYXlfbmFtZSI6ICJUaWtUb2siLCAidXBkYXRlX3ZlcnNpb25fY29kZSI6IDIwMjI1MDYyNTAsICJtYW5pZmVzdF92ZXJzaW9uX2NvZGUiOiAyMDIyNTA2MjUwLCAiYXBwX3ZlcnNpb25fbWlub3IiOiAiIiwgImFpZCI6IDEyMzMsICJwYWNrYWdlIjogImNvbS56aGlsaWFvYXBwLm11c2ljYWxseSIsICJhcHBfdmVyc2lvbiI6ICIyNS42LjI1IiwgInZlcnNpb25fY29kZSI6IDI1MDYyNSwgInNka192ZXJzaW9uIjogIjIuMTIuMS1yYy4zOCIsICJzZGtfdGFyZ2V0X...ImdpdF9oYXNoIjogImQ4MWVlYjI2IiwgIm9zIjogIkFuZHJvaWQiLCAib3NfdmVyc2lvbiI6ICI5IiwgIm9zX2FwaSI6IDI4LCAiZGV2aWNlX21vZGVsIjogIkFPU1Agb24gdGFpbWVuIiwgImRldmljZV9icmFuZCI6ICJBbmRyb2lkIiwgImRldmljZV9tYW51ZmFjdHVyZXIiOiAiR29vZ2xlIiwgImNwdV9hYmkiOiAiYXJtZWFiaS12N2EiLCAicmVsZWFzZV9idWlsZCI6ICI5ZTFhMWY1XzIwMjIwODAyX2RmOTkxZWE2LTEyNjYtMTFlZC05M2YxLTAyNDIwMGFjMTEzMSIsICJkZW5zaXR5X2RwaSI6IDU2MCwgImRpc3BsYXlfZGVuc2l0eSI6ICJtZHBpIiwgInJlc29sdXRpb24iOiAiMjcxMngxNDQwIiwgImxhbmd1YWdlIjogInpoIiwgInRpbWV6b25lIjogOCwgImFjY2VzcyI6ICJ3aWZpIiwgIm5vdF9yZXF1ZXN0X3NlbmRlciI6IDAsICJyb20iOiAiZW5nLnRlc3QuMjAyMTEwMTEuMTYyNjA0IiwgInJvbV92ZXJzaW9uIjogImFvc3BfdGFpbWVuLXVzZXJkZWJ1ZyA5IFBRMUEuMTkwMTA1LjAwNCBlbmcudGVzdC4yMDIxMTAxMS4xNjI2MDQgdGVzdC1rZXlzIiwgImNkaWQiOiAiMjc1MjU4MDItODIzZC00MThhLTg2ZjMtNDc2Y2VjNDJhMDQ0IiwgInNpZ19oYXNoIjogIjE5NDMyNmU4MmM4NWMwMjMxMTZmNGE2MzlhNTJlMTJhIiwgIm9wZW51ZGlkIjogIjc4ZThjYTM1NDg5ZWRjODkiLCAiY2xpZW50dWRpZCI6ICIxYmY3Zjg2ZC02NGFiLTQxMmMtYTZkOC0yNTg0OTlkNjdkYTgiLCAicmVnaW9uIjogIlNHIiwgInR6X25hbWUiOiAiQXNpYVxcL1NpbmdhcG9yZSIsICJ0el9vZmZzZXQiOiAyODgwMCwgInJlcV9pZCI6ICIxNjUyZTkzYS1hY2RiLTRiM2YtYWZhZS0yM2UyZWIxMjBhZjIiLCAiY3VzdG9tIjogeyJzY3JlZW5faGVpZ2h0X2RwIjogODIzLCAic2NyZWVuX3dpZHRoX2RwIjogNDExfSwgImFwa19maXJzdF9pbnN0YWxsX3RpbWUiOiAxNjU5NDk2NjcxMTIwLCAiaXNfc3lzdGVtX2FwcCI6IDAsICJzZGtfZmxhdm9yIjogImdsb2JhbCJ9LCAiX2dlbl90aW1lIjogMTY2MTMyMjUyNTE5N30="
 }
 ```
@@ -374,7 +387,7 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/encrypt_get_token
 
 ```json
 {
-  "key": "KocYowB4qyUvp/Ld....J3zaKNcTlS2SP4DeVccM45Q=",
+  "key": "...",
   "dev_info": {
     ...
   }
@@ -424,7 +437,7 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/decrypt_get_token
 
 ```json
 {
-  "key": "",
+  "key": "...",
   "platform": "android",
   "aid": "1233",
   "data": "CKSMkIEEEAIoAjJAGXtAQy8VFQZN.....ZMRC0xxmhWgfmZAMAddLsdDblTCrcv1329BMBaVVn8XvmG+L8h93IZQ=="
@@ -466,15 +479,26 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_web_sign
 
 ## Request
 
-| Field    | Type       | Desc                                    |
-|----------|------------|-----------------------------------------|
-| key      | string     | 咨询技术人员获取密卡 / Contact us for secret key  |
-| req_url  | string     | 需要签名的 url / URL requiring signature     |
+| Field   | Type          | Required | Desc                                    |
+|---------|---------------|----------|-----------------------------------------|
+| key     | string        | yes      | 咨询技术人员获取密卡 / Contact us for secret key  |
+| req_url | string        | yes      | 需要签名的 url / URL requiring signature     |
+| body    | base64 string | no       | 需要签名的 body / body requiring signature   |
 
+GET:
 ```json
 {
   "key": "...",
   "req_url": "https://webcast.tiktok.com/webcast/im/fetch/?aid=1988&app_language=en-US&app_name=tiktok_web&browser_language=en&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/102.0.5005.63+Safari/537.36&cookie_enabled=true&cursor=&internal_ext=&device_platform=web&focus_state=true&from_page=user&history_len=4&is_fullscreen=false&is_page_visible=true&did_rule=3&fetch_rule=1&identity=audience&last_rtt=0&live_id=12&resp_content_type=protobuf&screen_height=1152&screen_width=2048&tz_name=Europe/Berlin&referer=https://www.tiktok.com/&root_referer=https://www.tiktok.com/&version_code=180800&webcast_sdk_version=1.3.0&update_version_code=1.3.0&room_id=7142747327864965934"
+}
+```
+
+POST:
+```json
+{
+  "key": "...",
+  "req_url": "https://webcast.tiktok.com/webcast/im/fetch/?aid=1988&app_language=en-US&app_name=tiktok_web&browser_language=en&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/102.0.5005.63+Safari/537.36&cookie_enabled=true&cursor=&internal_ext=&device_platform=web&focus_state=true&from_page=user&history_len=4&is_fullscreen=false&is_page_visible=true&did_rule=3&fetch_rule=1&identity=audience&last_rtt=0&live_id=12&resp_content_type=protobuf&screen_height=1152&screen_width=2048&tz_name=Europe/Berlin&referer=https://www.tiktok.com/&root_referer=https://www.tiktok.com/&version_code=180800&webcast_sdk_version=1.3.0&update_version_code=1.3.0&room_id=7142747327864965934"
+  "body": "CKSMkIEEEAIoAjJAGXtAQy8VFQZN=="
 }
 ```
 
