@@ -1,5 +1,6 @@
 import hashlib
 import random
+import time
 import urllib
 import requests
 
@@ -51,6 +52,19 @@ def to_query_str(query_dict: dict):
     return urllib.parse.urlencode(query_dict)
 
 
-if __name__ == '__main__':
-    pass
+def get_trace_id(aid: str, device_id: str):
+    timestamp = "%x" % (round(time.time() * 1000) & 0xffffffff)
 
+    if device_id == "":
+        device_str = rand_str(16)
+    else:
+        device_str = hex(int(device_id))[2:]
+
+    aid_str = hex(int(aid))[2:]
+    random_str = str(timestamp) + "10" + device_str + rand_str(2) + "0" + aid_str
+    trace_id = f"00-{random_str}-{random_str[:16]}-01"
+    return trace_id
+
+
+if __name__ == '__main__':
+    print(get_trace_id("1233", ""))

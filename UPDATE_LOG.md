@@ -1,5 +1,19 @@
 # Change Log
 
+## [V2.3.0] - 2022-09-23
+
+### Added
+
+- Supported the latest TikTok iOS **risk information report** `ri/report`! See the [ios device register demo](demo/ios_device_register.py). And the android platform is coming soon.
+
+### Improved
+
+- Improved the **ios device template** significantly, please update it and decrease the risk control by tiktok.
+
+### BugFix
+
+- None
+
 ## [v2.2.0] - 2022-09-15
 
 ### Added

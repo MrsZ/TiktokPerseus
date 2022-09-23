@@ -5,7 +5,7 @@ import json
 
 from key import key
 
-sign_server_host = "https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run" 
+sign_server_host = "https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run"
 
 
 def do_get_dev_tmpl(platform: str):
@@ -25,6 +25,22 @@ def do_get_dev_tmpl(platform: str):
 
 def get_device_register_body(dev_info) -> bytes:
     url = f"{sign_server_host}/get_device_register_body"
+    payload = json.dumps({
+        "key": key,
+        "dev_info": dev_info
+    })
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    response = requests.request("POST", url, headers=headers, data=payload)
+    print(response.text)
+    time.sleep(1)
+    data = json.loads(response.text)["data"]
+    return base64.b64decode(data)
+
+
+def get_ri_report_body(dev_info) -> bytes:
+    url = f"{sign_server_host}/get_ri_report_body"
     payload = json.dumps({
         "key": key,
         "dev_info": dev_info

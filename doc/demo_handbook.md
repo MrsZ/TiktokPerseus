@@ -31,11 +31,13 @@ In this demo, we supported 4 core risk control apis of 3 core biz scenarios, cov
 * Sec device token getting: `DeviceRegister.get_token()` in demo
     * SecDeviceToken encrypt interface `encrypt_get_token`: encrypt the device fingerprint to get the correct request body of `sdi/get_token`. The parameter is the same as `get_device_register_body`;
     * SecDeviceToken decrypt interface `decrypt_get_token`: decrypt the response from `sdi/get_token`, you can get the important `token` from the result.
+* RI(maybe risk info?) Report: `DeviceRegister.post_ri_report()` in demo(just ios now, android is coming soon).
 
 Finally, you can get three important id:
 * device id
 * install id
 * sec device token
+* risk information report
 
 
 ### 中文版
@@ -62,8 +64,10 @@ Finally, you can get three important id:
 * 获取 Sec Device Token 场景：Demo 中 `DeviceRegister.get_token()`
     * SecDeviceToken 加密接口 `encrypt_get_token`: 将设备指纹按需加密，得到 `sdi/get_token` 正确的请求 body, 传参方式同 `get_device_register_body`;
     * SecDeviceToken 解密接口 `decrypt_get_token`: 将服务端返回数据进行解密，从中提取关键的 token;
+* RI(Risk Info?) 上报：Demo 中 `DeviceRegister.post_ri_report()`, 目前只提供 ios ，android 即将支持
 
 最终你会获取已经完成设备注册和风控注册的：
 * device id
 * install id
 * sec device token
+* 风控设备信息上报

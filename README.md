@@ -22,6 +22,14 @@ For understanding our service clearly, you must read 3 documents carefully with 
 
 ## BREAKING NEWS / 劲爆更新
 
+### 2022-09-23
+
+* Supported the latest TikTok iOS **risk information report** `ri/report`! See the [ios device register demo](demo/ios_device_register.py). And the android platform is coming soon.
+* Improved the **ios device template** significantly, please update it and decrease the risk control by tiktok.
+
+* 已经支持了最新版本的 iOS 平台 TikTok 设备风险上报接口 `ri/report`！详情见[ios device register demo](demo/ios_device_register.py)。另外，android 版马上到来！
+* 大幅度提升了 iOS 设备模版的效果，请务必使用最新的模版以减少被风控的风险；
+
 ### 2022-09-15
 
 * Supported the latest TikTok Web Signature **X-bogus** as well as **_signature**! Look at the [demo](https://github.com/reverse4free/TiktokPerseusWeb) project to find out how to use it!
@@ -37,16 +45,6 @@ For understanding our service clearly, you must read 3 documents carefully with 
 
 * **已经支持最新版 Tiktok-lite 26.4.4 的签名算法**, 快来试试吧！现在我们支持 1180, 1233, 1240 三款最主流的 Tiktok app 了。
 * 最新版本的 web 签名我们也快搞定了，敬请期待！
-
-### 2022-09-06
-
-* **Significantly reduce the cost of interface calls, up to 60% off!** Otherwise, we have found that some bad guys abuse our free test key, so we decide to remove all free test keys. You can apply for 4 days available test key with 10 USDT. By the way, if you don't want to pay a 10 USDT for testing, you must not our potential clients D:)
-* Supported `sdi/get_token` both in android/ios platform. Ref [API](doc/API.md) `encrypt_get_token` and `decrypt_get_token` interface.
-* Added new api `get_device_template` to get android/ios device template. Now you can generate device fingerprint easily with our device template. Ref [API](doc/API.md) to get more information too.
-
-* **大幅度减少接口调用费用，最高达原有费用的 4 折**。另外，我们取消了免费测试 key，因为我们有发现一些测试用户滥用我们的接口，浪费了我们大量运营人力。现在你需要花费 10 USDT 来申请 4 天有效期的测试 key，毕竟，如果你连 10 USDT 都不愿意支付的话，我们不觉得你会是一个潜在的客户，望理解。
-* 新增支持 android/ios 平台的 `sdi/get_token` 接口。更详细的介绍请参考 [API](doc/API.md) `encrypt_get_token` 和 `decrypt_get_token` 接口。
-* 新增接口 `get_device_template` 以获取 android/ios 的设备指纹模版。基于该模版，你可以很轻松地创建任意的设备指纹。
 
 
 ## English Version
