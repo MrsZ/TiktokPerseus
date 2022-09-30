@@ -5,6 +5,8 @@ import json
 
 from key import key
 
+requests.packages.urllib3.disable_warnings()
+
 sign_server_host = "https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run"
 
 
@@ -86,7 +88,6 @@ def do_sign_v5(req_type: str, dev_info, timestamp: int, req_url: str, body: byte
     print(payload)
 
     response = requests.post(url, headers=headers, data=payload)
-    print(response.status_code)
     print(response.text)
 
     time.sleep(1)
@@ -112,11 +113,9 @@ def do_tt_encrypt(data: str) -> bytes:
     })
     print(payload)
     response = requests.post(url, headers=headers, data=payload)
-    print(response.status_code)
     print(response.text)
 
     time.sleep(1)
-
     if response.status_code == 200:
         obj = json.loads(response.text)
         return base64.b64decode(obj["data"].encode())
@@ -161,3 +160,27 @@ def decrypt_get_token(platform, aid, data):
     if response.status_code == 200:
         obj = json.loads(response.text)
         return obj["data"]
+
+
+def get_xcylons(req_url: str, dev_info, payload: bytes = None):
+    url = f"{sign_server_host}/get_xcylons"
+
+    req_payload = ""
+    if payload is not None:
+        req_payload = base64.b64encode(payload).decode()
+
+    data = json.dumps({
+        "key": key,
+        "req_url": req_url,
+        "payload": req_payload,
+        "dev_info": dev_info
+    })
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    response = requests.request("POST", url, headers=headers, data=data)
+    print(response.text)
+    time.sleep(1)
+    if response.status_code == 200:
+        obj = json.loads(response.text)
+        return obj["data"]["xc"]

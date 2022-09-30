@@ -1,19 +1,6 @@
+from uuid import uuid1
 from api import *
-from utils import rand_str, hash_md5_hex, post_request, get_request, to_query_str
-
-# aid = "1180"
-# package = "com.ss.android.ugc.trill"
-
-aid = "1233"
-package = "com.zhiliaoapp.musically"
-tz = "SG"
-user_agent = f"{package}/2022506250 (Linux; U; Android 9; zh; AOSP on taimen; Build/PQ1A.190105.004; Cronet/TTNetVersion:4cac2dc1 2022-07-06 QuicVersion:b67bcffb 2022-01-05)"
-openudid = "78e8bb3548cccc89"
-cdid = "27525802-873c-428a-86f3-476cec4ccc44"
-app_ver = "25.6.25"
-sdk_ver = "v04.04.00-ov-android"
-device_model = "AOSP on taimen"
-os_version = "9"
+from utils import *
 
 
 class DeviceRegister:
@@ -22,12 +9,8 @@ class DeviceRegister:
         self.install_id = ""
         self.dev_info = None
 
-    @staticmethod
-    def _get_trace_id():
-        timestamp = "%x" % (round(time.time() * 1000) & 0xffffffff)
-        random_str = str(timestamp) + "010" + rand_str(17) + "0000"
-        trace_id = f"00-{random_str}-{random_str[:16]}-01"
-        return trace_id
+    def _get_trace_id(self):
+        return get_trace_id(self.dev_info["appId"], self.dev_info["deviceId"])
 
     def post_device_register(self):
         """
@@ -40,52 +23,49 @@ class DeviceRegister:
         url = "/service/2/device_register/"
         query_args = {
             "ac": "wifi",
-            "aid": aid,
-            "app_name": "musical_ly",
-            "version_code": "250625",
-            "version_name": app_ver,
+            "aid": self.dev_info["appId"],
+            "app_name": self.dev_info["appName"],
+            "version_code": self.dev_info["appVersionCode"],
+            "version_name": self.dev_info["appVersion"],
             "device_platform": "android",
-            "ab_version": app_ver,
+            "ab_version": self.dev_info["appVersion"],
             "ssmix": "a",
-            "device_type": "AOSP+on+taimen",
-            "device_brand": "Android",
-            "language": "zh",
-            "os_api": "28",
-            "os_version": "9",
-            "openudid": openudid,
-            "manifest_version_code": "2022506250",
-            "resolution": "1440*2712",
-            "dpi": "560",
-            "update_version_code": "2022506250",
+            "device_type": self.dev_info["deviceModel"],
+            "device_brand": self.dev_info["deviceBrand"],
+            "language": self.dev_info["language"],
+            "os_api": str(self.dev_info["apiLevel"]),
+            "os_version": self.dev_info["osVersion"],
+            "openudid": self.dev_info["openUdid"],
+            "manifest_version_code": str(self.dev_info["manifestVersionCode"]),
+            "resolution": f'{self.dev_info["screenWidth"]}*{self.dev_info["screenHeight"]}',
+            "dpi": self.dev_info["densityDpi"],
+            "update_version_code": str(self.dev_info["updateVersionCode"]),
             "_rticket": timestamp_ms,
             "app_type": "normal",
-            "sys_region": tz,
+            "sys_region": self.dev_info["region"],
             "timezone_name": self.dev_info["timezoneName"],
-            "app_language": "zh-Hans",
-            "carrier_region": tz,
-            "fake_region": tz,
-            "timezone_offset": "28800",
-            "host_abi": "armeabi-v7a",
-            "locale": "zh-Hans",
+            "app_language": self.dev_info["language"],
+            "carrier_region": self.dev_info["carrierRegion"],
+            "fake_region": self.dev_info["region"],
+            "timezone_offset": self.dev_info["timezoneOffset"],
+            "host_abi": self.dev_info["cpuAbi"],
+            "locale": self.dev_info["language"],
             "ac2": "wifi5g",
             "uoo": "1",
-            "op_region": tz,
-            "build_number": app_ver,
-            "region": tz,
+            "op_region": self.dev_info["region"],
+            "build_number": self.dev_info["appVersion"],
+            "region": self.dev_info["region"],
             "ts": timestamp,
-            "cdid": cdid
+            "cdid": self.dev_info["cdid"],
         }
 
         query_args_str = to_query_str(query_args)
         req_url = f"{host}{url}?{query_args_str}"
 
         body = get_device_register_body(self.dev_info)
-        print(body.hex())
-
         body_md5 = hash_md5_hex(body).upper()
         x_ladon, x_argus, x_gorgon, x_khronos, x_tyhon = do_sign_v5("POST", timestamp=timestamp, req_url=req_url,
                                                                     body=body, dev_info=self.dev_info)
-
         headers = {
             'sdk-version': '2',
             'passport-sdk-version': '19',
@@ -94,12 +74,13 @@ class DeviceRegister:
             "x-tt-dm-status": "login=0;ct=0;rt=7",
             'content-type': 'application/octet-stream;tt-data=a',
             'x-ss-stub': body_md5,
-            "x-tt-local-region": tz,
+            "x-tt-local-region": self.dev_info["region"],
             "x-tt-store-region-uid": "none",
             "x-tt-store-region-did": "none",
-            "x-ss-dp": aid,
+            "x-ss-dp": self.dev_info["appId"],
             'x-tt-trace-id': self._get_trace_id(),
-            'user-agent': user_agent,
+            "x-tt-trace": "1",
+            'user-agent': self.dev_info["userAgent"],
             'accept-encoding': 'gzip, deflate',
             "x-argus": x_argus,
             "x-ladon": x_ladon,
@@ -128,46 +109,46 @@ class DeviceRegister:
         host = 'http://log-va.tiktokv.com'
         url = "/service/2/app_alert_check/"
         query_args = {
-            "timezone": "8.0",
+            "timezone": self.dev_info["timezone"],
             "device_id": self.device_id,
             "ac": "wifi",
-            "aid": aid,
-            "app_name": "musical_ly",
-            "version_code": "250625",
-            "version_name": app_ver,
+            "aid": self.dev_info["appId"],
+            "app_name": self.dev_info["appName"],
+            "version_code": self.dev_info["appVersionCode"],
+            "version_name": self.dev_info["appVersion"],
             "device_platform": "android",
-            "ab_version": app_ver,
+            "ab_version": self.dev_info["appVersion"],
             "ssmix": "a",
-            "device_type": "AOSP+on+taimen",
-            "device_brand": "Android",
-            "language": "zh",
-            "os_api": "28",
-            "os_version": "9",
-            "openudid": openudid,
-            "manifest_version_code": "2022506250",
-            "resolution": "1440*2712",
-            "dpi": "560",
-            "update_version_code": "2022506250",
+            "device_type": self.dev_info["deviceModel"],
+            "device_brand": self.dev_info["deviceBrand"],
+            "language": self.dev_info["language"],
+            "os_api": str(self.dev_info["apiLevel"]),
+            "os_version": self.dev_info["osVersion"],
+            "openudid": self.dev_info["openUdid"],
+            "manifest_version_code": str(self.dev_info["manifestVersionCode"]),
+            "resolution": f'{self.dev_info["screenWidth"]}*{self.dev_info["screenHeight"]}',
+            "dpi": self.dev_info["densityDpi"],
+            "update_version_code": str(self.dev_info["updateVersionCode"]),
             "_rticket": timestamp_ms,
             "app_type": "normal",
-            "sys_region": "CN",
+            "sys_region": self.dev_info["language"],
             "timezone_name": self.dev_info["timezoneName"],
-            "app_language": "zh-Hans",
-            "carrier_region": tz,
-            "fake_region": tz,
-            "timezone_offset": "28800",
-            "host_abi": "armeabi-v7a",
-            "locale": "zh-Hans",
+            "app_language": self.dev_info["language"],
+            "carrier_region": self.dev_info["region"],
+            "fake_region": self.dev_info["region"],
+            "timezone_offset": self.dev_info["timezoneOffset"],
+            "host_abi": self.dev_info["cpuAbi"],
+            "locale": self.dev_info["language"],
             "ac2": "wifi5g",
             "uoo": "1",
-            "op_region": tz,
-            "build_number": app_ver,
-            "region": "CN",
+            "op_region": self.dev_info["region"],
+            "build_number": self.dev_info["appVersion"],
+            "region": self.dev_info["region"],
             "ts": timestamp,
-            "cdid": cdid,
+            "cdid": self.dev_info["cdid"],
             "req_id": "120126cf-1934-40d5-a803-315925967fb6",
-            "cronet_version": "4cac2dc1_2022-07-06",
-            "ttnet_version": "4.1.89.18-tiktok"
+            "cronet_version": self.dev_info["cronetVersion"],
+            "ttnet_version": self.dev_info["ttnetVersion"]
         }
         query_args_str = to_query_str(query_args)
         req_url = f"{host}{url}?{query_args_str}"
@@ -180,12 +161,12 @@ class DeviceRegister:
             "x-vc-bdturing-sdk-version": "2.2.1.i18n",
             "x-tt-dm-status": "login=0;ct=0;rt=7",
             'content-type': 'application/octet-stream;tt-data=a',
-            "x-tt-local-region": tz,
+            "x-tt-local-region": self.dev_info["region"],
             "x-tt-store-region-uid": "none",
             "x-tt-store-region-did": "none",
-            "x-ss-dp": aid,
+            "x-ss-dp": self.dev_info["appId"],
             'x-tt-trace-id': self._get_trace_id(),
-            'user-agent': user_agent,
+            'user-agent': self.dev_info["userAgent"],
             'accept-encoding': 'gzip, deflate',
             "x-argus": x_argus,
             "x-ladon": x_ladon,
@@ -207,17 +188,17 @@ class DeviceRegister:
         host = "https://mssdk-va.tiktokv.com"
         url = "/sdi/get_token"
         query_args = {
-            "lc_id": "2142840551",
+            "lc_id": self.dev_info["licenseId"],
             "platform": "android",
             "device_platform": "android",
-            "sdk_ver": sdk_ver,
-            "sdk_ver_code": "67371040",
-            "app_ver": app_ver,
-            "version_code": "2022506250",
-            "aid": aid,
+            "sdk_ver": self.dev_info["MSSDKVersion"],
+            "sdk_ver_code": self.dev_info["MSSDKVersionCode"],
+            "app_ver": self.dev_info["appVersion"],
+            "version_code": self.dev_info["appVersionCode"],
+            "aid": self.dev_info["appId"],
             "iid": self.install_id,
             "did": self.device_id,
-            "region_type": "ov",
+            "region_type": self.dev_info["regionType"],
             "mode": "2"
         }
         query_args_str = to_query_str(query_args)
@@ -231,16 +212,16 @@ class DeviceRegister:
             "x-tt-dm-status": "login=1;ct=1;rt=1",
             "x-vc-bdturing-sdk-version": "2.2.0",
             "content-type": "application/x-www-form-urlencoded",
-            "user-agent": user_agent,
+            "user-agent": self.dev_info["userAgent"],
             "x-tt-cmpl-token": "APNAgQQSF-R5wJVIRPsLJx0i-Ew0aZYMqqyP6zfGEA",
             "sdk-version": "2",
             "passport-sdk-version": "19",
             "x-ss-stub": body_md5,
             "x-tt-store-idc": "useast5",
-            "x-tt-store-region": tz,
+            "x-tt-store-region": self.dev_info["region"],
             "x-tt-store-region-src": "uid",
             "x-bd-kmsv": "0",
-            "x-ss-dp": aid,
+            "x-ss-dp": self.dev_info["appId"],
             "x-tt-trace-id": self._get_trace_id(),
             "accept-encoding": "gzip, deflate",
             "x-argus": x_argus,
@@ -250,8 +231,63 @@ class DeviceRegister:
             "x-tyhon": x_tyhon,
         }
         resp = post_request(host, url, query_args_str, header, post_body=body, is_text=False)
-        ret = decrypt_get_token("android", aid, resp)
-        print(ret)
+        ret = decrypt_get_token("android", self.dev_info["appId"], resp)
+        return ret["token"]
+
+    def post_ri_report(self):
+        """
+        send get_token get sec_did_token
+        """
+        timestamp_ms = round(time.time() * 1000)
+        timestamp = timestamp_ms // 1000
+
+        host = "https://mssdk-va.tiktokv.com"
+        url = "/ri/report"
+
+        query_args = {
+            "lc_id": self.dev_info["licenseId"],
+            "platform": self.dev_info["os"],
+            "device_platform": self.dev_info["platform"],
+            "sdk_ver": self.dev_info["MSSDKVersion"],
+            "sdk_ver_code": self.dev_info["MSSDKVersionCode"],
+            "app_ver": self.dev_info["appVersion"],
+            "version_code": self.dev_info["appVersionCode"],
+            "aid": self.dev_info["appId"],
+            "iid": self.dev_info["installId"],
+            "did": self.dev_info["deviceId"],
+            "region_type": self.dev_info["regionType"],
+            "mode": "2"
+        }
+        query_args_str = to_query_str(query_args)
+        req_url = f"{host}{url}?{query_args_str}"
+
+        body = get_ri_report_body(self.dev_info)
+        x_ladon, x_argus, x_gorgon, x_khronos, x_tyhon = do_sign_v5("POST",
+                                                                    dev_info=self.dev_info,
+                                                                    timestamp=timestamp,
+                                                                    req_url=req_url,
+                                                                    body=body)
+        body_md5 = hash_md5_hex(body).upper()
+        header = {
+            "user-agent": "ByteDance-MSSDK",
+            "x-tt-request-tag": "t=1;n=0",
+            "x-vc-bdturing-sdk-version": "2.2.1.i18n",
+            "content-type": "application/octet-stream",
+            "x-tt-dm-status": "login=0;ct=1;rt=6",
+            'x-tt-store-region': self.dev_info["region"],
+            'x-tt-store-region-src': 'did',
+            'x-ss-dp': self.dev_info["appId"],
+            'x-tt-trace-id': self._get_trace_id(),
+            'accept-encoding': 'gzip, deflate',
+            "x-ss-stub": body_md5,
+            "x-argus": x_argus,
+            "x-ladon": x_ladon,
+            "x_gorgon": x_gorgon,
+            "x-khronos": x_khronos,
+            "x-tyhon": x_tyhon,
+        }
+        resp = post_request(host, url, query_args_str, header, post_body=body, is_text=False)
+        print(resp)
 
     def process_dev_info(self, platform: str):
         """
@@ -259,9 +295,10 @@ class DeviceRegister:
         """
         self.dev_info = do_get_dev_tmpl(platform)
 
-        self.dev_info["appId"] = aid
-        self.dev_info["appVersion"] = app_ver
-        self.dev_info["MSSDKVersion"] = sdk_ver
+        self.dev_info["openUdid"] = rand_str(40)
+        self.dev_info["clientUdid"] = str(uuid1())
+        self.dev_info["cdid"] = str(uuid1())
+        self.dev_info["androidId"] = rand_str(20)
 
         # fill other devices info according to yourself.....
 
@@ -270,21 +307,26 @@ class DeviceRegister:
 
 if __name__ == '__main__':
     device = DeviceRegister()
-    print("\n====== START GET DEV TEMPLATE ======")
+    print("====== START GET DEV TEMPLATE ======")
     device.process_dev_info("android")
-    print("\n====== FINISH GET DEV TEMPLATE ======")
+    print("====== FINISH GET DEV TEMPLATE ======")
 
     print("\n====== START DO DEV REGISTER ======")
     device.post_device_register()
-    print("\n====== FINISH DO DEV REGISTER ======")
-    
+    print("====== FINISH DO DEV REGISTER ======")
+
     print("\n====== START DO DEV ACTIVATE ======")
     device.send_app_alert_check()
-    print("\n====== FINISH DO DEV ACTIVATE ======")
+    print("====== FINISH DO DEV ACTIVATE ======")
 
     print("\n====== START GET SEC DEV ID ======")
     dev_info = device.dev_info
     dev_info["installId"] = device.install_id
     dev_info["deviceId"] = device.device_id
-    device.get_token()
-    print("\n====== FINISH GET SEC DEV ID ======")
+    token = device.get_token()
+    print("====== FINISH GET SEC DEV ID ======")
+
+    print("\n====== START ri/report ======")
+    dev_info["secDeviceIdToken"] = token
+    device.post_ri_report()
+    print("====== FINISH ri/report ======")

@@ -1,5 +1,21 @@
 # Change Log
 
+## [V2.4.0】 - 2022-09-30
+
+### Added
+
+- Supported the latest TikTok Android **risk information report** `ri/report`! See the [android device register demo](demo/android_device_register.py). Now both ios and android platform are supported.
+- Supported the latest Tiktok both Android and iOS **Cylons** algorithm! See the `get_xcylons` in [api](doc/API#get_xcylons).
+- Supported query your **account useage** of our service. See the `/user/get_info` in [api](doc/API#user_get_info).
+
+### Improved 
+
+- None
+
+### BugFix
+
+- None
+
 ## [V2.3.0] - 2022-09-23
 
 ### Added

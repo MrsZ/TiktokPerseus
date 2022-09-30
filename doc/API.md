@@ -1,15 +1,16 @@
 # 已支持的 API 列表 / Supported API List
 
-| API                                                   | Platform                                                                                              | Desc                                                                              |
-|-------------------------------------------------------|:------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------|
-| [get_device_template](#get_device_template)           | <input type="checkbox" disabled checked /> iOS<br><input type="checkbox" disabled checked /> Android  | 获取设备信息模版 / Get Device Info Template                                               |
-| [get_sign](#get_sign)                                 | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取 Tiktok 签名 / Get Tiktok Signature (X-Argus/X-Ladon/X-Gorgon/X-khronos/X-Tyhon)  |
-| [get_device_register_body](#get_device_register_body) | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取设备注册 Body(内含 tt_encrypt) / Get Device Register Body(Including tt_encrypt inner) |
-| [encrypt_get_token](#encrypt_get_token)               | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 获取 sdi/get_token 接口请求加密后的 body / Get Encrpyted Body Used by sdi/get_token         |
-| [decrypt_get_token](#decrypt_get_token)               | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android | 解密 sdi/get_token 接口返回的内容 / Decrypt The Response of sdi/get_token                  |
-| [get_ri_report_body](#get_ri_report_body)             | <input type="checkbox" disabled checked /> iOS  | 获取 ri/report post 接口的 Body / Get body of ri/report post request                                        |
-| [get_web_sign](#get_web_sign)                         | <input type="checkbox" disabled checked /> Web                                                        | Web 端签名(_siangture & x-bogus) / Web Signature (_signature & x-bogus)              |
-| X-Cylons                                              | <input type="checkbox" disabled />iOS<br> <input type="checkbox" disabled />Android                   | Coming soon.                                                                      |                                                                           |
+| API                                                   | Platform                                                                                               | Desc                                                                              |
+|-------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------|
+| [get_device_template](#get_device_template)           | <input type="checkbox" disabled checked /> iOS<br><input type="checkbox" disabled checked /> Android   | 获取设备信息模版 / Get Device Info Template                                               |
+| [get_sign](#get_sign)                                 | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android  | 获取 Tiktok 签名 / Get Tiktok Signature (X-Argus/X-Ladon/X-Gorgon/X-khronos/X-Tyhon)  |
+| [get_device_register_body](#get_device_register_body) | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android  | 获取设备注册 Body(内含 tt_encrypt) / Get Device Register Body(Including tt_encrypt inner) |
+| [encrypt_get_token](#encrypt_get_token)               | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android  | 获取 sdi/get_token 接口请求加密后的 body / Get Encrpyted Body Used by sdi/get_token         |
+| [decrypt_get_token](#decrypt_get_token)               | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled checked />Android  | 解密 sdi/get_token 接口返回的内容 / Decrypt The Response of sdi/get_token                  |
+| [get_ri_report_body](#get_ri_report_body)             | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled  checked />Android | 获取 ri/report 接口 Body / Get ri/report Body                                         |
+| [get_xcylons](#get_xcylons)                           | <input type="checkbox" disabled checked /> iOS <br> <input type="checkbox" disabled  checked />Android | 获取 X-Cylons 签名 / Get X-Cylons Signature                                           |                                                                           
+| [get_web_sign](#get_web_sign)                         | <input type="checkbox" disabled checked /> Web                                                         | Web 端签名(_siangture & x-bogus) / Web Signature (_signature & x-bogus)              |
+| [/user/get_info](#user_get_info)                      |                                                                                                        | 获取密卡使用情况 / Get the used detail of your paied key                                             |
 
 # <a id="get_device_template">获取设备信息模版 / Get Device Info Template </a>
 
@@ -72,30 +73,40 @@ Android:
     "androidId": "GMvBNG3bm9Zx6azm3jZI0Q",
     "apiLevel": 28,
     "appId": "1233",
+    "appName": "musical_ly",
     "appVersion": "25.6.25",
-    "appVersionCode": "2022506250",
+    "appVersionCode": "2506250",
+    "arch": "arm32",
     "bootTimeUTC": "1660725090",
     "brightness": 117,
+    "carrierRegion": "PL",
     "cdid": "27525802-873c-428a-86f3-476cec4ccc44",
+    "channel": "googleplay",
     "clientUdid": "1bfcc86d-64ab-412c-a6d8-258499d67bb8",
     "cpuAbi": "armeabi-v7a",
+    "cpuCoreNum": 6,
     "cronetVersion": "4cac2dc1_2022-07-06",
     "curBattery": 14,
     "dataModify": "1648621054",
     "densityDpi": 560,
+    "deviceBoard": "aosp",
     "deviceBrand": "Android",
     "deviceId": "",
     "deviceManufacturer": "Google",
     "deviceModel": "SAMSUNG",
+    "deviceProduct": "aosp_oriole",
     "dnsList": "[\"0.0.0.0\"]",
     "drmId": "FaEefb6eREHATUr+GMvBNG3bm9ZX6azm3jZI0Q=",
     "gitHash": "d81eeb26",
     "installId": "",
-    "installTime": 1659496671130,
+    "installTime": "1663400748",
     "internalFreeSize": "52408725137",
     "internalStorageSize": "55886317271",
+    "internalStorageUsedSize": "24068493312",
     "ipv6": "fe80::6047:5ebe:3613:4b48",
     "language": "en_US",
+    "launchFirstTime": "1657622322664",
+    "libcHash": "2446076022",
     "licenseId": "2142840551",
     "mac": "66:14:09:3e:bc:8b",
     "manifestVersionCode": 2022506250,
@@ -105,11 +116,15 @@ Android:
     "package": "com.zhiliaoapp.musically",
     "packagePath": "/data/app/com.zhiliaoapp.musically-ILpHWVFOHFc1A==/base.apk",
     "platform": "android",
+    "platformBoard": "gs101",
     "publicIP": "110.86.124.1",
     "ramTotalSize": "3475283943",
-    "region": "SG",
+    "region": "US",
     "regionType": "ov",
     "releaseBuild": "9e1a1f5_20220802_df991ea6-1266-11ed-93f1-024200ac1131",
+    "roBuildTags": "test-keys",
+    "roDesc": "aosp_oriole-userdebug 12 SP2A.220305.013.A3 eng.root.20220804.150309 test-keys",
+    "roIncr": "eng.root.20220804.150309",
     "rom": "eng.test.20220111.172604",
     "romCompileUTC": "1633940780",
     "romVersion": "SAMSUNG-userdebug eng.test.20220111.172604 20221011",
@@ -119,13 +134,15 @@ Android:
     "screenWidthDpi": 411,
     "sdcardSize": "55788637211",
     "sdkTargetVersion": 29,
+    "secDeviceIdToken": "",
     "sigHash": "194326e82c85c023116f4a639a52effa",
     "storageChange": "1660725095",
-    "timezone": "8",
-    "timezoneName": "Asia/Singapore",
-    "timezoneOffset": 28800,
+    "timezone": "-7",
+    "timezoneName": "US/Pacific",
+    "timezoneOffset": -25200,
     "ttnetVersion": "4.1.89.18-tiktok",
     "updateVersionCode": 2022506250,
+    "userAgent": "com.zhiliaoapp.musically/2022506250 (Linux; U; Android 9; zh; SAMSUNG; Build/PQ1A.190105.004; Cronet/TTNetVersion:4cac2dc1 2022-07-06 QuicVersion:b67bcffb 2022-01-05)",
     "wifiGateWayIP": "110.86.124.1",
     "wifiIP": "2038191626"
   },
@@ -139,71 +156,71 @@ iOS:
 {
   "code": 200,
   "data": {
-        "IDFA": "E1F9EC92-82FC-4E65-9415-DEE4D928097F",
-        "IDFV": "4504F914-4A2E-4478-A790-2AA8A1E46859",
-        "MSSDKVersion": "v04.04.00-ov-iOS",
-        "MSSDKVersionCode": "67371041",
-        "appId": "1233",
-        "appName": "musical_ly",
-        "appVersion": "25.9.0",
-        "appVersionCode": "259000",
-        "arch": "arm64 v8",
-        "bootId": "2B772275-02ED-4471-AE36-544AE162281C",
-        "bootTimeUTC": "1661486486",
-        "brightness": 43,
-        "buildNumber": "259000",
-        "carrier": "",
-        "carrierRegion": "PL",
-        "cdid": "27525802-873c-428a-86f3-476cec4ccc44",
-        "channel": "App Store",
-        "cpuCoreNum": 6,
-        "cronetVersion": "dcb1a66f_2022-07-04",
-        "curBattery": 15,
-        "densityDpi": 3,
-        "deviceBrand": "iPhone10,2",
-        "deviceId": "",
-        "deviceModel": "D21AP",
-        "dylbHash": "a389a4d993fdb2401a51635d73c7cb61",
-        "dyldShareCache": "ZHlsZF92MSAgIGFybTY0",
-        "dyldUuid": "F756A8D5-5A80-3B4D-9962-36FE0E7638C2",
-        "gitHash": "d81eeb26",
-        "infoProductVersion": "18B92",
-        "installId": "",
-        "installTime": "1663400748",
-        "internalFreeSize": "45328261120",
-        "internalStorageSize": "63968497664",
-        "internalStorageUsedSize": "24068493312",
-        "ipv6": "fe80::6047:5ebe:3613:4b48",
-        "l1DCacheSize": "32768",
-        "l2CacheSize": "8388608",
-        "language": "en_US",
-        "launchFirstTime": "1657622322664",
-        "licenseId": "466012054",
-        "mac": "66:14:09:3e:bc:8b",
-        "openUdid": "d3986af2bdd746809d560532e1c531b6be927151",
-        "os": "iOS",
-        "osVersion": "14.2",
-        "package": "com.zhiliaoapp.musically",
-        "platform": "ios",
-        "ramTotalSize": "3118235648",
-        "region": "SG",
-        "regionType": "ov",
-        "romCompileUTC": "1633940780",
-        "screenHeight": 2880,
-        "screenWidth": 1440,
-        "secDeviceIdToken": "",
-        "sigHash": "194326e82c85c023116f4a639a52effa",
-        "teamID": "MJ797D8U6F",
-        "textHash": "4503600356763869",
-        "timezone": "8",
-        "timezoneName": "Asia/Singapore",
-        "timezoneOffset": 28800,
-        "ttnetVersion": "4.1.94.12",
-        "userAgent": "TikTok 25.9.0 rv:259000 (iPhone; iOS 14.2; zh_CN) Cronet",
-        "vendorId": "4594F944-2A2E-4471-A791-3AA8A2E46859",
-        "webUA": "Mozilla\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Mobile\/15E148",
-        "wifiGateWayIP": "10.85.115.255",
-        "wifiIP": "10.85.115.234"
+    "IDFA": "EC9E1F92-82FC-4E65-9415-DE809E4D927F",
+    "IDFV": "504F9414-4A2E-4478-A790-28A1E4AA6859",
+    "MSSDKVersion": "v04.04.00-ov-iOS",
+    "MSSDKVersionCode": "67371041",
+    "appId": "1233",
+    "appName": "musical_ly",
+    "appVersion": "25.9.0",
+    "appVersionCode": "259000",
+    "arch": "arm64 v8",
+    "bootId": "7722B275-2E0D-4741-AE36-54428AE1621C",
+    "bootTimeUTC": "1661486486",
+    "brightness": 43,
+    "buildNumber": "259000",
+    "carrier": "T-Mobile",
+    "carrierRegion": "PL",
+    "cdid": "27525802-873c-428a-86f3-476cec4ccc44",
+    "channel": "App Store",
+    "cpuCoreNum": 6,
+    "cronetVersion": "dcb1a66f_2022-07-04",
+    "curBattery": 15,
+    "densityDpi": 3,
+    "deviceBrand": "iPhone10,2",
+    "deviceId": "",
+    "deviceModel": "D21AP",
+    "dylbHash": "a389a4d993fdb2401a51635d73c7cb61",
+    "dyldShareCache": "ZHlsZF92MSAgIGFybTY0",
+    "dyldUuid": "F756A8D5-5A80-3B4D-9962-36FE0E7638C2",
+    "gitHash": "d81eeb26",
+    "infoProductVersion": "18B92",
+    "installId": "",
+    "installTime": "1663400748",
+    "internalFreeSize": "45328261120",
+    "internalStorageSize": "63968497664",
+    "internalStorageUsedSize": "24068493312",
+    "ipv6": "fe80::6047:5ebe:3613:7b48",
+    "l1DCacheSize": "32768",
+    "l2CacheSize": "8388608",
+    "language": "en_US",
+    "launchFirstTime": "1657622322664",
+    "licenseId": "466012054",
+    "mac": "66:14:09:3e:b7:85",
+    "openUdid": "d3986af560532e1c2bdd746809d531b6be927151",
+    "os": "iOS",
+    "osVersion": "14.2",
+    "package": "com.zhiliaoapp.musically",
+    "platform": "ios",
+    "ramTotalSize": "3118235648",
+    "region": "US",
+    "regionType": "ov",
+    "romCompileUTC": "1633940780",
+    "screenHeight": 2880,
+    "screenWidth": 1440,
+    "secDeviceIdToken": "",
+    "sigHash": "194326e82c85c023116f4a639a52effa",
+    "teamID": "MJ797D8U6F",
+    "textHash": "4503600356763869",
+    "timezone": "-7",
+    "timezoneName": "US/Pacific",
+    "timezoneOffset": -25200,
+    "ttnetVersion": "4.1.94.12",
+    "userAgent": "TikTok 25.9.0 rv:259000 (iPhone; iOS 14.2; zh_CN) Cronet",
+    "vendorId": "4594F944-2A2E-4471-A791-3AA8A2E46859",
+    "webUA": "Mozilla\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Mobile\/15E148",
+    "wifiGateWayIP": "109.85.115.255",
+    "wifiIP": "109.85.115.234"
   },
   "msg": "success"
 }
@@ -528,6 +545,58 @@ https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_ri_report_body
 }
 ```
 
+# <a id="get_xcylons">获取 X-Cylons 签名 / Get X-Cylons Signature</a>
+
+## URL
+
+```
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/get_xcylons
+```
+
+## Method
+
+<b>POST</b>
+
+## Request
+
+| Field    | Type          | Required | Desc                                            |
+|----------|---------------|----------|-------------------------------------------------|
+| key      | string        | yes      | 咨询技术人员获取密卡 / Contact us for secret key          |
+| req_url  | string        | yes      | 需要签名的 url / URL requiring signature             |
+| payload  | base64 string | no       | 需要签名的 payload / payload requiring signature     |
+| dev_info | object        | yes      | 获取设备信息模版接口获取 / get_device_template api get      |
+
+```json
+{
+  "key": "...",
+  "req_url": "/ws/v2?aid=1180&device_id=xxxxx&access_key=xxxxxx&fpid=9&sdk_version=3&sid=xxxxx&pl=1&ne=1&version_code=250900&is_background=-1&device_platform=iphone",
+  "dev_info": {
+    ...
+  }
+}
+
+```
+
+## Response
+
+| Field | Type   | Desc          |
+|-------|--------|---------------|
+| code  | int    | Result Code   |
+| data  | object | X-Cylons      |
+| msg   | string | Error Message |
+
+***
+
+```json
+{
+  "code": 200,
+  "data": {
+    "xc": "qblOjxDWQ3HOdFJq5/uJSv3v"
+  },
+  "msg": "success"
+}
+```
+
 # <a id="get_web_sign">Web 签名 / Web Signature (_signature & x-bogus)</a>
 
 ## URL
@@ -604,3 +673,65 @@ signed result detail:
 }
 ```
 
+# <a id="user_get_info">获取密卡使用情况 / Get the used detail of key</a>
+
+## URL
+
+```
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/user/get_info
+```
+
+## Method
+
+<b>GET</b>
+<b>POST</b>
+
+## GET
+
+```
+https://new-sign-tt-aycoaohohf.us-west-1.fcapp.run/user/get_info?key=<your key>
+```
+
+## POST
+
+```json
+{
+  "key": "..."
+}
+```
+
+## Response
+
+| Field | Type    | Desc          |
+|-------|---------|---------------|
+| code  | int     | Result code   |
+| data  | object  | key detail    |
+| msg   | string  | Error message |
+
+detail:
+
+| Field                | Type   | Desc                                              |
+|----------------------|--------|---------------------------------------------------|
+| expire_time          | string | 过期时间 (UTC+0)  /  Expire time (UTC+0)                     |
+| expire_timestamp     | string | 过期时间的时间戳   /  Expire timestamp                   |
+| start_time           | string | 开始时间 (UTC+0)   /  Start time (UTC+0)                     |
+| start_timestamp      | string | 开始时间的时间戳    /  Start timestamp                    |
+| today_total          | int    | 今日调用额度     / Today total quest amount              |
+| today_used           | int    | 今日已用额度    / Today used quest amount                      |
+| user_type            | string | 用户类型 "试用" 或者 "会员" / User type "Test" or "Official" |
+
+```json
+{
+  "code": 200,
+  "data": {
+    "expire_time": "2022-10-16 10:35:37(UTC+0)",
+    "expire_timestamp": 1665887737,
+    "start_time": "2022-09-16 10:35:37(UTC+0)",
+    "start_timestamp": 1663295737,
+    "today_total": 1000,
+    "today_used": 0,
+    "user_type": "Test"
+  },
+  "msg": "success"
+}
+```

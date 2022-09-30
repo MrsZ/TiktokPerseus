@@ -22,7 +22,17 @@ For understanding our service clearly, you must read 3 documents carefully with 
 
 ## BREAKING NEWS / 劲爆更新
 
-### 2022-09-23
+### 2022-09-30 v2.4.0
+
+* Supported the latest TikTok Android **risk information report** `ri/report`! See the [android device register demo](demo/android_device_register.py). Now both ios and android platform are supported.
+* Supported the latest Tiktok both Android and iOS **Cylons** algorithm! See the `get_xcylons` in [api](doc/API#get_xcylons).
+* Supported query your **account useage** of our service. See the `/user/get_info` in [api](doc/API#user_get_info).
+
+* 已经支持了最新版本的 Android 平台 TikTok 设备风险上报接口 `ri/report`！详情见[android device register demo](demo/android_device_register.py)。现在双平台我们都支持了。
+* 已经支持了最新版的双平台 X-Cylons 算法。详情见`get_xcylons` in [api](doc/API#get_xcylons)。
+* 已经支持了付费账户的使用情况查询服务。详情见`/user/get_info` in [api](doc/API#user_get_info)。
+
+### 2022-09-23 v2.3.0
 
 * Supported the latest TikTok iOS **risk information report** `ri/report`! See the [ios device register demo](demo/ios_device_register.py). And the android platform is coming soon.
 * Improved the **ios device template** significantly, please update it and decrease the risk control by tiktok.
@@ -30,7 +40,7 @@ For understanding our service clearly, you must read 3 documents carefully with 
 * 已经支持了最新版本的 iOS 平台 TikTok 设备风险上报接口 `ri/report`！详情见[ios device register demo](demo/ios_device_register.py)。另外，android 版马上到来！
 * 大幅度提升了 iOS 设备模版的效果，请务必使用最新的模版以减少被风控的风险；
 
-### 2022-09-15
+### 2022-09-15 v2.2.0
 
 * Supported the latest TikTok Web Signature **X-bogus** as well as **_signature**! Look at the [demo](https://github.com/reverse4free/TiktokPerseusWeb) project to find out how to use it!
 * The X-Cylons is coming soon~

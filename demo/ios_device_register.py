@@ -275,7 +275,7 @@ class DeviceRegister:
         self.dev_info["cdid"] = str(uuid1())
         self.dev_info["IDFV"] = str(uuid1()).upper()
         self.dev_info["IDFA"] = str(uuid1()).upper()
-        self.dev_info["openUdid"] = "3986af5d531b6be92715d60532e1c2bdd7468091"
+        self.dev_info["openUdid"] = rand_str(40)
         self.dev_info["vendorId"] = str(uuid1()).upper()
 
         # fill other devices info according to yourself.....
